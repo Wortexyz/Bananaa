@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    [SerializeField] AudioSource buttonsound;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,12 @@ public class SceneManagement : MonoBehaviour
     }
     public void restart()
     {
+        buttonsound.Play();
+        SceneManager.LoadScene(1);
+    }
+    public void home()
+    {
+        buttonsound.Play();
         SceneManager.LoadScene(0);
     }
 }

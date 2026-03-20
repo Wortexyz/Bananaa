@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoretext , BalanceBanana;
     int score = 0 , toatalBanana = 10 ,balance;
     bool notfinished = true;
+    [SerializeField] AudioSource audioSource,bgmusic;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             notfinished = false;
             winpannel.SetActive(true);
+            bgmusic.Stop();
         }
     }
 
@@ -53,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
             balance = toatalBanana - score;
             scoretext.text = "Score :" + score.ToString();
             BalanceBanana.text = "Balance Banana :" + balance.ToString();
+            audioSource.Play();
         }
     }
 
